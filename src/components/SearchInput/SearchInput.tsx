@@ -9,7 +9,7 @@ interface SearchInputProps extends Omit<BaseInputProps, "onChange"> {
 
 export const SearchInput = ({onChange, timeout = 500, ...props}: SearchInputProps) => {
     const [searchString, setSearchString] = useState<string>("");
-    const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+    const [timer, setTimer] = useState<number | null>(null);
 
     useEffect(() => {
         if(searchString === null) {
