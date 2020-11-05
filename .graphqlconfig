@@ -1,0 +1,5 @@
+{
+  "name": "The GraphQL Schema",
+  "schemaPath": "src/graphql/schema.public.graphql",
+  "excludes": ["node_modules/**"]
+}

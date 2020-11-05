@@ -1,0 +1,11 @@
+fragment User on User {
+    avatarUrl
+    bio
+    email
+    url
+    name
+    company
+    repositories {
+        totalCount
+    }
+}

@@ -1,0 +1,9 @@
+fragment RepositoryOwner on RepositoryOwner {
+    id
+    avatarUrl
+    login
+    url
+    repositories {
+        totalCount
+    }
+}

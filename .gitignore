@@ -1,5 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Idea
+.idea
+
+# Generated types
+src/types.d.ts
+
+# Graphql introspection schema
+src/introspectionSchema.json
+
+# Local settings
+src/settings.ts
+
 # dependencies
 /node_modules
 /.pnp
@@ -19,5 +31,3 @@
 .env.production.local
 
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

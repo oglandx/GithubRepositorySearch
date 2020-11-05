@@ -1,0 +1,19 @@
+#import "../fragments/Repository.graphql"
+
+query repositoryQuery(
+    $queryString: String!,
+    $after: String,
+    $first: Int,
+    $withCount: Boolean = false
+) {
+    search(query: $queryString, after: $after, first: $first, last: null, type: REPOSITORY) {
+        pageInfo {
+            endCursor
+            hasNextPage
+        }
+        repositoryCount @include(if: $withCount)
+        nodes {
+            ...Repository
+        }
+    }
+}

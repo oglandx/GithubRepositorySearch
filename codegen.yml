@@ -1,0 +1,20 @@
+overwrite: true
+schema:
+  - ./src/graphql/schema.public.graphql
+documents: ./src/**/*.graphql
+generates:
+  ./src/types.d.ts:
+    plugins:
+      - fragment-matcher
+      - typescript
+      - typescript-operations
+  ./src/introspectionSchema.json:
+    plugins:
+      - introspection
+    config:
+      minify: false
+config:
+  namingConvention: keep
+  scalars:
+    DateTime: DateTime
+    Date: Date

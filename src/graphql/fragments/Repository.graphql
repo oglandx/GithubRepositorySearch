@@ -1,0 +1,32 @@
+#import "./RepositoryOwner.graphql"
+
+fragment Repository on Repository {
+    id
+    url
+    homepageUrl
+    watchers {
+        totalCount
+    }
+    owner {
+        ...RepositoryOwner
+    }
+    contactLinks {
+        about
+        name
+        url
+    }
+    assignableUsers {
+        totalCount
+    }
+    createdAt
+    name
+    nameWithOwner
+    licenseInfo {
+        url
+        name
+    }
+    stargazers {
+        totalCount
+    }
+    viewerHasStarred
+}
