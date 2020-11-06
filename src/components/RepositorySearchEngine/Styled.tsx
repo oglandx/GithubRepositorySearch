@@ -11,7 +11,6 @@ export const StyledSearchEngine = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
 `
 
 export const LoadMoreButton = styled.button`

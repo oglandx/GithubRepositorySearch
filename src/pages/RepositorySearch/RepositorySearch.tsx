@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {RepositorySearchEngine} from "../../components/RepositorySearchEngine";
 import {SearchInput} from "../../components/SearchInput";
-import {FlexContainer, FlexRow, HeaderFlexRow, LogoImage} from "./Styled";
+import {EmptyPage, FlexContainer, FlexRow, HeaderFlexRow, LogoImage} from "./Styled";
 
 export const RepositorySearch = () =>  {
     const [queryString, setQueryString] = useState<string>("");
@@ -14,11 +14,11 @@ export const RepositorySearch = () =>  {
                              placeholder="Начните набирать имя репозитория"
                 />
             </HeaderFlexRow>
-            {queryString === "" ? null: (
-                <FlexRow>
-                    <RepositorySearchEngine queryString={queryString} resultsToLoad={20}/>
-                </FlexRow>
-            )}
+            <FlexRow>
+                {queryString === "" ?
+                    <EmptyPage/>:
+                    <RepositorySearchEngine queryString={queryString} resultsToLoad={20}/>}
+            </FlexRow>
         </FlexContainer>
     );
 }
