@@ -12,6 +12,9 @@ src/introspectionSchema.json
 # Local settings
 src/settings.ts
 
+# Storybook
+.storybook
+
 # dependencies
 /node_modules
 /.pnp
