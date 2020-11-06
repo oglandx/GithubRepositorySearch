@@ -1,4 +1,5 @@
 #import "./RepositoryOwner.graphql"
+#import "./Language.graphql"
 
 fragment Repository on Repository {
     id
@@ -25,8 +26,11 @@ fragment Repository on Repository {
         url
         name
     }
-    stargazers {
-        totalCount
-    }
+    stargazerCount
     viewerHasStarred
+    description
+    primaryLanguage {
+        ...Language
+    }
+    forkCount
 }
