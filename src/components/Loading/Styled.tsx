@@ -12,5 +12,5 @@ export const StyledLoading = styled.div`
     font-size: 18px;
     width: 100%;
     text-align: center;
-    padding: 2px;
+    padding-bottom: 4px;
 `
