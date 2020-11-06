@@ -1,0 +1,1 @@
+export {SearchResultCount} from "./SearchResultCount";

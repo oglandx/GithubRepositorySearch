@@ -5,11 +5,37 @@ import RepositoryQuery from "../../graphql/query/repositoryQuery.graphql";
 import {Loading} from "../../components/Loading";
 import {Notification} from "../../components/Notification";
 import {RepositorySearchResult} from "./RepositorySearchResult";
+import styled from "styled-components";
 
 export interface RepositorySearchEngineProps {
     queryString: string;
     resultsToLoad: number;
 }
+
+const StyledSearchEngine = styled.div`
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 60px;
+`
+
+const LoadMoreButton = styled.button`
+    font-size: 14px;
+    width: fit-content;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 6px 10px;
+    background-color: #fff;
+    color: #24292e;
+    cursor: pointer;
+    align-self: center;
+    outline: none;
+    
+    &:hover {
+        color: #555;
+    }
+`
 
 export const RepositorySearchEngine = ({queryString, resultsToLoad}: RepositorySearchEngineProps) =>  {
     const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -45,11 +71,11 @@ export const RepositorySearchEngine = ({queryString, resultsToLoad}: RepositoryS
     const pageInfo = data.search.pageInfo;
 
     return (
-        <div>
+        <StyledSearchEngine>
             <RepositorySearchResult search={data.search}/>
             {isLoadingMore ? <Loading/>:
                 !pageInfo.hasNextPage ? null: (
-                    <button onClick={async () => {
+                    <LoadMoreButton onClick={async () => {
                         setIsLoadingMore(true);
                         await fetchMore({
                             variables: {
@@ -69,8 +95,8 @@ export const RepositorySearchEngine = ({queryString, resultsToLoad}: RepositoryS
                         setIsLoadingMore(false);
                     }}>
                         Загрузить ещё!
-                    </button>
+                    </LoadMoreButton>
                 )}
-        </div>
+        </StyledSearchEngine>
     )
 }
