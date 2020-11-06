@@ -14,9 +14,11 @@ export const RepositorySearch = () =>  {
                              placeholder="Начните набирать имя репозитория"
                 />
             </HeaderFlexRow>
-            <FlexRow>
-                <RepositorySearchEngine queryString={queryString} resultsToLoad={20}/>
-            </FlexRow>
+            {queryString === "" ? null: (
+                <FlexRow>
+                    <RepositorySearchEngine queryString={queryString} resultsToLoad={20}/>
+                </FlexRow>
+            )}
         </FlexContainer>
     );
 }
