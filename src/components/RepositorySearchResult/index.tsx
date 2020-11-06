@@ -1,0 +1,1 @@
+export {RepositorySearchResult} from "./RepositorySearchResult";

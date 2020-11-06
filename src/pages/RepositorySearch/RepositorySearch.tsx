@@ -1,32 +1,7 @@
 import React, {useState} from 'react';
-import {RepositorySearchEngine} from "./RepositorySearchEngine";
+import {RepositorySearchEngine} from "../../components/RepositorySearchEngine";
 import {SearchInput} from "../../components/SearchInput";
-import styled from "styled-components";
-
-const FlexContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-`
-
-const FlexRow = styled(FlexContainer)`
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-`
-
-const HeaderFlexRow = styled(FlexRow)`
-    background-color: #24292e;
-`
-
-const LogoImage = styled.div`
-    width: 42px;
-    content: url("${process.env.PUBLIC_URL}/github.svg");
-    margin-right: 10px;
-    filter: invert(100%);
-`
+import {FlexContainer, FlexRow, HeaderFlexRow, LogoImage} from "./Styled";
 
 export const RepositorySearch = () =>  {
     const [queryString, setQueryString] = useState<string>("");
