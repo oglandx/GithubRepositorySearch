@@ -33,6 +33,7 @@ export const RepositoryMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow-wrap: break-word;
 `
 
 export const RepositoryLink = styled.a`

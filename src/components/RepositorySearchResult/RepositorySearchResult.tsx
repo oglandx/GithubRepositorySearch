@@ -27,7 +27,7 @@ export const RepositorySearchResult = ({search}: RepositorySearchResultProps) =>
                         <RepositoryResultItem key={`repository-${node.id}`}>
                             <RepositoryMain>
                                 <RepositoryLink href={node.url} target="_blank" rel="noreferrer">
-                                    {node.nameWithOwner}
+                                    {node.nameWithOwner.replace("/", " / ")}
                                 </RepositoryLink>
                                 <RepositoryDescription>
                                     {node.description}

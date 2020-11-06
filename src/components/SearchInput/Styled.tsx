@@ -11,6 +11,9 @@ export const StyledInputWrapper = styled.div<{writing?: boolean}>`
         ${({writing}) => writing ? css`display: inline-block`: css`display: none`}
     }
     width: 60%;
+    @media screen and (max-width: 1080px) {
+        width: 80%;
+    }
     height: 35px;
     margin-bottom: 10px;
     margin-top: 5px;

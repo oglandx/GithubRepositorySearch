@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 export const StyledSearchEngine = styled.div`
     width: 60%;
+    padding-left: 60px;
+    @media screen and (max-width: 1080px) {
+        width: 80%;
+        padding-left: 0;
+    }
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: 60px;
+    
 `
 
 export const LoadMoreButton = styled.button`
